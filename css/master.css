@@ -1,0 +1,322 @@
+/* Define colors for throughout the site */
+:root {
+    --bg-color: #B9DABB;
+    --content-bg-color: #A0C9A0;
+    --header-color: #5CA060;
+    /* --highlight-color: #89BE8C; */
+    --highlight-color: rgba(107, 160, 110, 0.7);
+    --highlight-solid-color: rgba(107, 130, 110, 0.8);
+    --toolbar-color: #3A853F;
+    /* --darkest-color: #206C25; */
+    --darkest-color: rgba(32, 68, 37, 0.7);
+    --even-darker-color: #10511A;
+    /* --lightest-color: #DCF8DE; */
+    /* --lightest-color: rgba(220, 248, 222, 0.4); */
+    --lightest-color: rgba(31, 19, 5, 0.7);
+    --light-text-color: rgba(246, 199, 211, 0.8);
+    --magenta-color: rgba(183, 129, 143, 0.7);
+    --table-row-color: #8CC090;
+}
+
+/*  */
+/*  */
+/* General page css */
+/*  */
+/*  */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+body {
+  /* margin: 0; */
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+  margin-top: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: #aaffaa; */
+  /* background-color: #4E6D68; */
+  /* background-color: #f8f9fa; */
+  /* background-color: var(--bg-color); */
+  /* background-image: url("../images/sunset_sans_deer_4_3.jpg"); */
+  /* background-position: center; */
+  background-size: cover;
+  height: 100%;
+  min-height: 100%;
+}
+
+button {
+    background-color: #3C8040;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+}
+
+
+
+p, li {
+    line-height: 1.5;
+}
+
+
+ul {
+    list-style: square;
+    padding: 15px;
+}
+
+/*  */
+/*  */
+/* Header-specific css */
+/*  */
+/*  */
+div.header {
+  /* header image goes here */
+  background-color: var(--lightest-color);
+  margin: 10px;
+  display: flex;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid var(--darkest-color);
+}
+
+div.title {
+    /*padding: 32px;
+    padding-top: 40px; */
+    flex: 65%;
+}
+
+div.title h1, div.title h2, div.title p {
+  text-align: center;
+  /* background-color: #5CA060; */
+  background-color: none;
+  padding: -10px;
+  margin: 4px;
+  border-radius: none;
+  /* color: white; */
+  color: var(--magenta-color);
+  opacity: 1.0;
+}
+
+div.title h1 {
+    font: normal 1.9em;
+    /* margin-bottom: 5px; */
+}
+
+div.title h2 {
+    font: normal 1.7em;
+}
+
+div.title p {
+    font: normal 0.9em;
+}
+
+/* #ef-logo { */
+/*     margin-top: 40px; */
+/* } */
+
+#clock {
+    float: center;
+    font-size: 3.5em;
+}
+
+div.header-image {
+    margin-left: auto;
+    margin-top: -15px;
+    /* padding: 22px; */
+    /* padding-top: 30px; */
+}
+
+div.header-image img {
+    width:20%;
+    float: right;
+    opacity: 1.0;
+}
+
+/*  */
+/*  */
+/* navigation bar css */
+/*  */
+/*  */
+.topnav {
+    background-color: var(--lightest-color);
+    border: 2px solid var(--darkest-color);
+    border-radius: 15px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* This is for ALL lists in the nav bar */
+.topnav ul {
+    list-style-type: none;
+}
+
+/* This is for the top-level lists that are horizontal */
+.topnav ul.menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+/* This is for the list items in the top level */
+.topnav ul.menu li.top-menu {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* This is for all links, both top and sub */
+.topnav ul.menu li.top-menu a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* This is for the links inside those top-level lists */
+.topnav ul.menu li.top-menu a.top-link {
+    /* padding: 10px; */
+    display: inline-block;
+    flex: 0 1 100%;
+    text-align: center;
+}
+
+/* .topnav ul.menu li.top-menu a.top-link:hover,  */
+/* Make links highlighted when hovering */
+.topnav ul.menu li.top-menu:hover {
+    background-color: var(--highlight-solid-color);
+    border-radius: 12px 12px 0px 0px;
+    border: 0px solid black;
+    border-bottom-style: none;
+}
+
+/* This is for the sub-level lists when not hovered */
+.topnav ul.menu li.top-menu ul.submenu {
+    display: none;
+}
+
+
+/* This is to reveal the submenu when hovering over a top-level list entry */
+.topnav ul.menu li.top-menu:hover ul.submenu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 44px;
+    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.6); */
+    background-color: var(--highlight-solid-color);
+    border-radius: 0px 0px 12px 12px;
+    border: 0px solid black;
+    border-top-style: none;
+}
+
+/* This is formatting for the submenu list entries */
+.topnav ul.menu li.top-menu:hover ul.submenu li {
+    display: flex;
+    justify-content: center;
+    /* background-color: var(--highlight-solid-color); */
+}
+
+/* ...And formatting the links within */
+.topnav ul.menu li.top-menu:hover ul.submenu li a {
+    flex: 0 1 100%;
+    text-align: center;
+}
+
+/* This makes the submenu links change color when hovered */
+.topnav ul.menu li.top-menu ul.submenu li:hover {
+    background-color: var(--magenta-color);
+    border: 0px solid black;
+    border-radius: 12px;
+}
+
+
+
+/*  */
+/*  */
+/* Main body specific css */
+/*  */
+/*  */
+.content {
+    /* background-color: var(--bg-color); */
+    /* background-color: var(--content-bg-color); */
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--light-text-color);
+}
+
+div.content h1, div.content h2 {
+    opacity: 1.0;
+    text-align: center;
+    /* background-color: #5CA060; */
+    /* background-color: var(--darkest-color); */
+    background-color: var(--highlight-color);
+    padding: 3px 6px;
+    border-radius: 15px;
+    /* color: #f2f2f2; */
+}
+
+div.main-box, div.side-box {
+    padding: 3px 5px;
+    line-height: 2.0em;
+    /* margin-bottom: 10px; */
+}
+
+div.main-box {
+    float: left;
+    flex: 100%;
+    /* border: 2px solid #5CA060; */
+    border: 2px solid var(--darkest-color);
+    border-radius: 15px;
+    background-color: var(--lightest-color);
+    /* opacity: 0.3; */
+    /* margin-right: 10px; */
+}
+
+div.main-box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    opacity: 1.0;
+}
+
+div.ascii-box {
+    text-align: center;
+}
+
+div.ascii-box pre {
+    font-family: monospace;
+    line-height: 1;
+    display: inline-block;
+    text-align: left;
+}
+
+
+/*  */
+/*  */
+/* Media queries */
+/*  */
+/*  */
+
+/* This changes the background image to accomodate different aspect ratios */
+@media screen and (min-aspect-ratio: 16/9) {
+    body {
+        /* background-image: url("../images/sunset_sans_deer_1080.jpg"); */
+    }
+}
+
+
+
+
+
+
+
+
